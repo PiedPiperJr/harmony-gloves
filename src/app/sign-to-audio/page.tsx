@@ -150,7 +150,7 @@ const SignTranslator: React.FC = () => {
         // Après l'animation du texte, déclencher la lecture avec un décalage de 5 secondes
         setTimeout(() => {
           readText();
-        }, 2000);  // 5 secondes de décalage
+        }, 500);  // 5 secondes de décalage
       }
     }, 100);  // Délais entre chaque caractère pour l'animation
   };

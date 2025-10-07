@@ -111,28 +111,28 @@ const SignTranslator: React.FC = () => {
 
         if (parsedValues.length === 5) {
           grid.push(parsedValues)
-          if (grid.length % 5 == 0 && model != undefined) {
-            if (model) {
-              let response = await predictTf(model, grid, Object.keys(data));
-              console.log("Tensor flow result", response)
+          // if (grid.length == 5 && model != undefined) {
+          //   if (model) {
+          //     let response = await predictTf(model, grid, Object.keys(data));
+          //     console.log("Tensor flow result", response)
 
-              if (response) {
+          //     if (response) {
 
-                setCurrentPrediction(response);
-                if (response !== "0") { // N'ajouter que les prédictions valides
-                  setTranslatedText(prev => prev + response);
-                }
-              }
-            }
-            grid.length = 0
-          }
-          // TODO write the stuff here
-          // const prediction = predict(parsedValues);
-          // console.log(prediction)
-          // setCurrentPrediction(prediction);
-          // if (prediction !== "0") { // N'ajouter que les prédictions valides
-          //   setTranslatedText(prev => prev + prediction);
+          //       setCurrentPrediction(response);
+          //       if (response !== "0") { // N'ajouter que les prédictions valides
+          //         setTranslatedText(prev => prev + response);
+          //       }
+          //     }
+          //   }
+          //   grid.length = 0
           // }
+          // TODO write the stuff here
+          const prediction = predict(parsedValues);
+          console.log(prediction)
+          setCurrentPrediction(prediction);
+          if (prediction !== "0") { // N'ajouter que les prédictions valides
+            setTranslatedText(prev => prev + prediction);
+          }
         }
       }
     } catch (error) {
@@ -172,7 +172,7 @@ const SignTranslator: React.FC = () => {
       } else {
         clearInterval(interval);
       }
-    }, 100);
+    }, 1000);
   };
 
   const resetText = () => {
