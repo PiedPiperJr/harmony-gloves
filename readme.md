@@ -42,5 +42,6 @@ Le fichier de simulation Proteus (schema_proteus.pdsprj) peut être ouvert pour 
 - Téléverser le code arduino_uno_code.ino sur l’Arduino UNO.
 - Configurer les connexions comme décrit dans le schéma.
 
+![image du gant v1](lsf_gloves.webp)
 
 <!-- ## 🤝 Contributeurs -->
